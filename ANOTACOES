@@ -1,0 +1,46 @@
+MariaDB 10.3.15
+https://mariadb.com/kb/en/library/mariadb-10315-release-notes/
+
+
+Microserviços: tem por finalidade separação de modelagem da nossa aplicação em contextos coesos e independentes uns
+dos outros.
+
+Conteudo do curso:
+
+
+- Sistema para floricultura:  catalogo por estado.
+-> cadastro de forncedor por região.
+
+
+Loja:  gestão de pedido.
+Fornecedor: Gestão de catalogo.
+Transportador: gestão de voucher.
+
+----------------------------------
+
+OBS:  as versões do Spring Cloud  tem as estações  de Metrode Londres associadas em ordem alfabetica.
+-- Utilizada:  Greenwich.SR1
+
+------------------------------------------------------------------------
+
+Solucao implementada até o momento:
+
+Teremos três microsserviços: Fornecedor, Loja e Transportador:
+--Uma apresentação da modelagem focado em DDD (Domain Driven Design)
+Quebraremos o domínio em contextos menores (bounded context)
+Um microsserviço é a implementação de um contexto
+O uso do Postman como cliente HTTP
+A criação do microsserviço Loja usando Spring Boot
+
+-----------------------------------------------------------------------
+
+DDD:  (Domain Driven Design)  -Projeto Orientado a Daminio.
+- solução orientada pelas regras do negocio.
+
+DTO: (data transfer object)
+- objeto que transporta dados.
+
+
+
+
+

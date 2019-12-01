@@ -1,0 +1,21 @@
+POST: http://localhost:8080/compra
+
+{
+	"itens": [
+		{
+			"id":  1,
+			"quantidade": 5
+		},
+		{
+			"id": 2,
+			"quantidade":1
+		}
+	],
+	"endereco": {
+		"rua":  "Rua da Maria",
+		"numero": 123,
+		"estado": "GO"
+	}
+}
+
+----------------------------------
