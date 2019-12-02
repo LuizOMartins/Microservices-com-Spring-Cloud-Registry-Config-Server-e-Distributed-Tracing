@@ -44,3 +44,46 @@ DTO: (data transfer object)
 
 
 
+PROJETO FORNECEDOR:
+
+DEPENDENCIAS:
+SPRING DATA JPA.
+DRIVER MYSQL.
+SPRING STARTER WEB.
+
+-------------------------------------------------------------------------
+
+
+ Eureka: Service Discovery
+ - open source desenvolvida pela Netflix 
+ - obter de maneira dinâmica os endereços de IP dos serviços que iremos consumir.
+ porque: é comum um aplicativo ser disponibilizado na nuvem, ou permitir a criação de instâncias dinamicamente levando em consideração novas implantações , escalabilidade e possíveis falhas.
+
+
+ 	ResponseEntity<InfoFornecedorDTO> exchange =  
+				client.exchange("http://localhost:8081/info/"+compra.getEndereco().getEstado(), 
+						HttpMethod.GET, null, InfoFornecedorDTO.class);
+
+	->Para:
+
+ 	ResponseEntity<InfoFornecedorDTO> exchange =  
+				client.exchange("http://fornecedor/info/"+compra.getEndereco().getEstado(), 
+						HttpMethod.GET, null, InfoFornecedorDTO.class);
+
+-> Spring starter project >  eureka server
+
+--------------------------------------------------------------------------
+
+A integração entre microsserviços com RestTemplate
+O RestTemplate do Spring permite chamadas HTTP de alto nível
+Um introdução ao Service discovery e Service registry
+Service registry é um servidor central, onde todos os microsserviços ficam cadastrados (nome e IP/porta)
+Service discovery é um mecanismo de descoberta do IP do microsserviço pelo nome
+Dessa forma, nenhum microsserviço fica acoplado ao outro pelo IP/porta
+A implementação do service registry através do Eureka Server
+Como registrar da Loja e do Fornecedor no Eureka Server
+A resolução do IP/porta através do nome do microsserviço nas requisições
+
+
+
+--------------------------------------------------------------------------
