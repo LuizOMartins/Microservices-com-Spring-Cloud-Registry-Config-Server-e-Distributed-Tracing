@@ -84,6 +84,6 @@ A implementação do service registry através do Eureka Server
 Como registrar da Loja e do Fornecedor no Eureka Server
 A resolução do IP/porta através do nome do microsserviço nas requisições
 
-
-
 --------------------------------------------------------------------------
+
+

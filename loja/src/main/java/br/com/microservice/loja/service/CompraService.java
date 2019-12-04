@@ -24,10 +24,7 @@ public class CompraService {
 				client.exchange("http://fornecedor/info/"+compra.getEndereco().getEstado(), 
 						HttpMethod.GET, null, InfoFornecedorDTO.class);
 		System.out.println(exchange.getBody().getEndereco());
-		
-		
-	}
-	
-	
+			
+	}	
 
 }
