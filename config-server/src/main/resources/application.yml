@@ -3,15 +3,5 @@ server:
   port: 8888
   
 spring:
-<<<<<<< HEAD
   cloud:    config:      server:        git:
           uri: https://github.com/LuizOMartins/microservice-repo          search-paths: fornecedor
-=======
-  profiles:
-    active: native
-  cloud:
-    config:
-      server:
-        native:
-          search-locations: c:\microservice-repo
->>>>>>> 46ab2ccc7348c240fbcb71b9416e97e8d2c295f9

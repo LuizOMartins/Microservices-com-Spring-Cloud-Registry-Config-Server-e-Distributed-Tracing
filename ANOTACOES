@@ -87,3 +87,16 @@ A resolução do IP/porta através do nome do microsserviço nas requisições
 --------------------------------------------------------------------------
 
 
+Que um servidor de configuração é o lugar central para definir as configurações dos serviços
+Que todas as configurações dos microsserviços devem ficar externalizadas e centralizadas
+Que o Spring Config Server é uma implementação do servidor do projeto Spring Cloud
+Sobre a integração dos microsserviços com o servidor de configuração
+Para tal, devemos configurar o nome do microsserviço, profile e URL do Config Server
+Que existem várias formas de definir um repositório de configurações, entre elas o GitHub
+
+
+--------------------------------------------------------------------------
+
+RIBBON:
+
+https://cloud.spring.io/spring-cloud-static/spring-cloud-netflix/2.2.0.M3/reference/html/#customizing-the-default-for-all-ribbon-clients
