@@ -1,12 +1,15 @@
+Ambiente:  
 MariaDB 10.3.15
 https://mariadb.com/kb/en/library/mariadb-10315-release-notes/
+STS: 4.4.0
+Spring-boot-starter: 2.1.5.RELEASE
+
 
 
 Microserviços: tem por finalidade separação de modelagem da nossa aplicação em contextos coesos e independentes uns
 dos outros.
 
-Conteudo do curso:
-
+PROJETO: 
 
 - Sistema para floricultura:  catalogo por estado.
 -> cadastro de forncedor por região.
@@ -21,7 +24,7 @@ Transportador: gestão de voucher.
 OBS:  as versões do Spring Cloud  tem as estações  de Metrode Londres associadas em ordem alfabetica.
 -- Utilizada:  Greenwich.SR1
 
-------------------------------------------------------------------------
+----------------------------------
 
 Solucao implementada até o momento:
 
@@ -32,7 +35,7 @@ Um microsserviço é a implementação de um contexto
 O uso do Postman como cliente HTTP
 A criação do microsserviço Loja usando Spring Boot
 
------------------------------------------------------------------------
+----------------------------------
 
 DDD:  (Domain Driven Design)  -Projeto Orientado a Daminio.
 - solução orientada pelas regras do negocio.
@@ -40,14 +43,7 @@ DDD:  (Domain Driven Design)  -Projeto Orientado a Daminio.
 DTO: (data transfer object)
 - objeto que transporta dados.
 
-PROJETO FORNECEDOR:
-
-DEPENDENCIAS:
-SPRING DATA JPA.
-DRIVER MYSQL.
-SPRING STARTER WEB.
-
--------------------------------------------------------------------------
+----------------------------------
 
 
  Eureka: Service Discovery
@@ -115,12 +111,34 @@ Como alternativa ao RestTemplate, podemos usar o Spring Feign, que já usa o Rib
 O Spring Feign exige apenas uma interface, com a definição e mapeamento dos métodos que executarão a requisição
 Toda a implementação da interface é gerada pelo Spring Feign
 
-
-
-
-
 ------------------------------------
 
+https://help.papertrailapp.com/kb/configuration/java-logback-logging/#syslogappender
 
----------> FAZER REVIEW DA LOGICA DE NEGOCIO DAS CLASSES DE FORNECEDOR.
-----------------> VER AULA CONFIGURANDO PAPERTRAIL:
+Sleuth: gerar correlation-ID que é enviado de requisição para requisição.
+
+
+Como se trata de uma arquitetura distribuída, temos logs distribuídos
+Ou seja, cada microsserviço (e instância dele) possui o seu log
+Isso dificulta o acompanhamento e rastreabilidade das requisições
+Para unificar os logs, precisamos de agregadores de log
+Como implementação de um agregador, usamos o Papertrail, um agregador como serviço
+Usamos a biblioteca Logback para gerar e enviar os logs ao agregador
+O Logback possui um appender, que possibilita o envio dos logs
+Para acompanhar uma transação nos logs, usamos uma correlation-id
+A correltation-id é um identificador da transação, que é passada de requisição pra requisição
+Dessa forma, podemos entender quais requisições fazem parte da mesma transação
+A biblioteca Spring Sleuth, que é usada para gerar a correlation-id
+
+-----------------------------------
+
+
+REVISÃO DO PROJETO: 
+
+Microservices.
+Eureka.
+Service Registry e Discovery.
+Spring Feign
+Clientside Loadbalance.
+Spring Config Server.
+Papertrail e Spring Sleuth.
