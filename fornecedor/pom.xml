@@ -8,7 +8,7 @@
 		<version>2.1.5.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>br.com.alura.microservice.fornecedor</groupId>
+	<groupId>br.com.microservice.fornecedor</groupId>
 	<artifactId>fornecedor</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>fornecedor</name>
