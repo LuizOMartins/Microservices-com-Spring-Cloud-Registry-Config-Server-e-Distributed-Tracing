@@ -121,4 +121,6 @@ Toda a implementação da interface é gerada pelo Spring Feign
 
 ------------------------------------
 
-5 - Distributed Tracing:
+
+---------> FAZER REVIEW DA LOGICA DE NEGOCIO DAS CLASSES DE FORNECEDOR.
+----------------> VER AULA CONFIGURANDO PAPERTRAIL:

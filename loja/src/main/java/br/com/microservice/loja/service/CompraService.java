@@ -1,5 +1,7 @@
 package br.com.microservice.loja.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +13,10 @@ import br.com.microservice.loja.model.Compra;
 
 	@Service
 	public class CompraService {
+		
+		private static final Logger LOG  = LoggerFactory.getLogger(CompraService.class);
+		
+	    
 		
 		@Autowired
 		private FornecedorClient fornecedorClient;
@@ -24,11 +30,13 @@ import br.com.microservice.loja.model.Compra;
 //		private DiscoveryClient eurekaClient; //client eureka 
 		
 		public Compra realizaCompra(CompraDTO compra) {
+			final String estado = compra.getEndereco().getEstado();
 			
+			LOG.info("Buscando informações do fornecedor de {}", estado);
 			InfoFornecedorDTO info = fornecedorClient.getInfoPorEstado(compra.getEndereco().getEstado());
 			
-			InfoPedidoDTO pedido  = fornecedorClient.realizaPedido(compra.getItens());
-					
+			LOG.info("realizando um pedido");
+			InfoPedidoDTO pedido  = fornecedorClient.realizaPedido(compra.getItens());					
 //			ResponseEntity<InfoFornecedorDTO> exchange =  
 //					client.exchange("http://fornecedor/info/"+compra.getEndereco().getEstado(), 
 //							HttpMethod.GET, null, InfoFornecedorDTO.class);
